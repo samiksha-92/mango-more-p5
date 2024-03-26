@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'allauth',  # new
     'allauth.account',  # new
     'allauth.socialaccount',  # new
+    'home',
     'allauth.socialaccount.providers.github',  # new for GitHub provider
 
 ]
@@ -90,7 +91,10 @@ ROOT_URLCONF = 'mango_more.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates','allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
